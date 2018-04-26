@@ -8,7 +8,7 @@ var bodyParser = require("body-parser");
 var app = express();
 
 // Setting port
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 3300;
 
 //  Sets up Express app too handle data parsing
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -16,8 +16,8 @@ app.use(bodyParser.json());
 
 
 //Routes to map server
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+require("./app/routing/apiRouting")(app);
+require("./app/routing/htmlRouting")(app);
 
 // Listener for server
 
